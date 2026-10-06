@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØVAK - Cuestionario Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">NØV<span>AK</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="javascript.html">JavaScript</a></li>
+                <li><a href="jquery.html">jQuery</a></li>
+                <li><a href="json.html">JSON</a></li>
+                <li><a href="hosting.html">Hosting</a></li>
+                <li><a href="cuestionario.html" class="active">Cuestionario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h1>Cuestionario de Autoevaluación Web</h1>
+            <p>Ponte a prueba con estas preguntas basadas en la investigación teórica de la plataforma NØVAK.</p>
+
+            <form id="quizForm">
+                <div class="pregunta">
+                    <p>1. ¿Cuál es la función principal de JavaScript en una tienda web como NØVAK?</p>
+                    <label><input type="radio" name="p1" value="a"> Definir los colores y maquetación visual de las prendas.</label>
+                    <label><input type="radio" name="p1" value="b"> Crear las etiquetas HTML para el encabezado del catálogo.</label>
+                    <label><input type="radio" name="p1" value="c"> Añadir interactividad, comportamiento y lógica de negocio.</label>
+                </div>
+
+                <div class="pregunta">
+                    <p>2. ¿Qué símbolo sirve como atajo principal para seleccionar elementos en jQuery?</p>
+                    <label><input type="radio" name="p2" value="a"> $</label>
+                    <label><input type="radio" name="p2" value="b"> #</label>
+                    <label><input type="radio" name="p2" value="c"> &amp;</label>
+                </div>
+
+                <div class="pregunta">
+                    <p>3. ¿JSON es un formato de texto plano utilizado para el intercambio de datos entre cliente y servidor?</p>
+                    <label><input type="radio" name="p3" value="a"> Verdadero</label>
+                    <label><input type="radio" name="p3" value="b"> Falso</label>
+                </div>
+
+                <div class="pregunta">
+                    <p>4. ¿Qué ventaja ofrece la plataforma Vercel al publicar la web de NØVAK?</p>
+                    <label><input type="radio" name="p4" value="a"> Diseña los patrones de costura de la colección automáticamente.</label>
+                    <label><input type="radio" name="p4" value="b"> Permite desplegar el sitio estático desde GitHub en una red global en segundos.</label>
+                    <label><input type="radio" name="p4" value="c"> Edita las fotografías de las prendas en alta resolución.</label>
+                </div>
+
+                <div class="pregunta">
+                    <p>5. ¿Cuál es la función del sistema DNS al navegar en un sitio web?</p>
+                    <label><input type="radio" name="p5" value="a"> Traducir el nombre de dominio alfanumérico a una dirección IP legible por el servidor.</label>
+                    <label><input type="radio" name="p5" value="b"> Validar automáticamente los pagos de las prendas seleccionadas.</label>
+                    <label><input type="radio" name="p5" value="c"> Aplicar códigos de descuento a los carritos de compra.</label>
+                </div>
+
+                <button type="button" class="btn-submit" onclick="evaluarQuiz()">Comprobar Respuestas</button>
+            </form>
+
+            <div id="resultado"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NØVAK Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

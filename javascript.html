@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØVAK - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">NØV<span>AK</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="javascript.html" class="active">JavaScript</a></li>
+                <li><a href="jquery.html">jQuery</a></li>
+                <li><a href="json.html">JSON</a></li>
+                <li><a href="hosting.html">Hosting</a></li>
+                <li><a href="cuestionario.html">Cuestionario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h1>JavaScript (JS Vanilla)</h1>
+            <p>JavaScript es el lenguaje de programación que otorga interactividad y dinámica a los sitios web en el navegador del usuario.</p>
+            
+            <h2>Diferencias fundamentales</h2>
+            <ul>
+                <li><strong>HTML:</strong> Estructura del sitio web.</li>
+                <li><strong>CSS:</strong> Diseño y aspecto visual.</li>
+                <li><strong>JavaScript:</strong> Comportamiento e interactividad.</li>
+            </ul>
+
+            <h2>Conceptos Clave</h2>
+            <p><strong>Variables:</strong> Contenedores de datos (ej. <code>let precio = 75;</code>).</p>
+            <p><strong>Funciones:</strong> Bloques de código reutilizables.</p>
+            <p><strong>Eventos:</strong> Acciones del usuario como <code>click</code> o <code>hover</code>.</p>
+
+            <h2>Ejemplo de Código Explicado</h2>
+<pre><code>// Selecciona el botón de compra
+const btnComprar = document.getElementById("btn-comprar");
+
+// Agrega un evento al hacer clic
+btnComprar.addEventListener("click", function() {
+    alert("¡Prenda NØVAK agregada al carrito!");
+});</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fuente: MDN Web Docs</p>
+    </footer>
+</body>
+</html>

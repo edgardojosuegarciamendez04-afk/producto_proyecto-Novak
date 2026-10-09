@@ -1,56 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NØVAK - JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">NØV<span>AK</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="javascript.html" class="active">JavaScript</a></li>
-                <li><a href="jquery.html">jQuery</a></li>
-                <li><a href="json.html">JSON</a></li>
-                <li><a href="hosting.html">Hosting</a></li>
-                <li><a href="cuestionario.html">Cuestionario</a></li>
-            </ul>
-        </nav>
+
+    <header class="p-3 border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
+            <nav>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-danger me-1">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+                <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+            <div class="d-flex gap-2">
+                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
+                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="card">
-            <h1>JavaScript (JS Vanilla)</h1>
-            <p>JavaScript es el lenguaje de programación que otorga interactividad y dinámica a los sitios web en el navegador del usuario.</p>
+    <main class="container my-5">
+        <div class="card p-4">
+            <h2>JavaScript (JS Vanilla)</h2>
+            <p data-es="Es un lenguaje de programación interpretado que añade interactividad a las páginas web." data-en="It is an interpreted programming language that adds interactivity to web pages.">Es un lenguaje de programación interpretado que añade interactividad a las páginas web.</p>
             
-            <h2>Diferencias fundamentales</h2>
+            <h4 class="mt-3" data-es="Diferencias clave:" data-en="Key differences:">Diferencias clave:</h4>
             <ul>
-                <li><strong>HTML:</strong> Estructura del sitio web.</li>
-                <li><strong>CSS:</strong> Diseño y aspecto visual.</li>
-                <li><strong>JavaScript:</strong> Comportamiento e interactividad.</li>
+                <li><strong>HTML:</strong> <span data-es="Estructura el contenido." data-en="Structures the content.">Estructura el contenido.</span></li>
+                <li><strong>CSS:</strong> <span data-es="Agrega estilos visuales." data-en="Adds visual styles.">Agrega estilos visuales.</span></li>
+                <li><strong>JavaScript:</strong> <span data-es="Maneja la lógica y las acciones del usuario." data-en="Handles logic and user actions.">Maneja la lógica y las acciones del usuario.</span></li>
             </ul>
 
-            <h2>Conceptos Clave</h2>
-            <p><strong>Variables:</strong> Contenedores de datos (ej. <code>let precio = 75;</code>).</p>
-            <p><strong>Funciones:</strong> Bloques de código reutilizables.</p>
-            <p><strong>Eventos:</strong> Acciones del usuario como <code>click</code> o <code>hover</code>.</p>
-
-            <h2>Ejemplo de Código Explicado</h2>
-<pre><code>// Selecciona el botón de compra
-const btnComprar = document.getElementById("btn-comprar");
-
-// Agrega un evento al hacer clic
-btnComprar.addEventListener("click", function() {
+            <h4 class="mt-3" data-es="Ejemplo Práctico:" data-en="Practical Example:">Ejemplo Práctico:</h4>
+            <pre class="bg-black text-success p-3 rounded"><code>const boton = document.getElementById("btn-comprar");
+boton.addEventListener("click", function() {
     alert("¡Prenda NØVAK agregada al carrito!");
 });</code></pre>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>Fuente: MDN Web Docs</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

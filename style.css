@@ -1,212 +1,34 @@
-/* Variables de color de NØVAK */
-:root {
-  --bg-main: #0a0a0c;
-  --bg-card: #121216;
-  --bg-hover: #1a1a20;
-  --text-main: #e2e8f0;
-  --text-muted: #a0aec0;
-  --accent-red: #ff3b30;
-  --border-color: #2a2a32;
-  --font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Transiciones suaves para scroll y cambio de tema */
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  font-family: var(--font-family);
-  line-height: 1.6;
-  padding-bottom: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Encabezado y Navegación */
-header {
-  background-color: var(--bg-card);
-  border-bottom: 2px solid var(--accent-red);
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* Logo NØVAK */
+.brand-logo {
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: #ffffff;
+.brand-logo span {
+  color: #ff3b30;
 }
 
-.logo span {
-  color: var(--accent-red);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 15px;
-}
-
-nav a {
-  color: var(--text-main);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-
-nav a:hover, nav a.active {
-  background-color: var(--accent-red);
-  color: #ffffff;
-}
-
-/* Contenido Principal */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
+/* Efectos visuales en tarjetas */
 .card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 30px;
-  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-h1, h2, h3 {
-  color: #ffffff;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-  border-left: 4px solid var(--accent-red);
-  padding-left: 15px;
-}
-
-p {
-  color: var(--text-muted);
-  margin-bottom: 15px;
-}
-
-ul, ol {
-  margin-left: 20px;
-  margin-bottom: 15px;
-  color: var(--text-muted);
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* Tablas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background-color: var(--bg-main);
-}
-
-th, td {
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  text-align: left;
-  font-size: 14px;
-}
-
-th {
-  background-color: var(--bg-hover);
-  color: var(--accent-red);
-  text-transform: uppercase;
-}
-
-/* Bloques de Código */
-pre {
-  background-color: #000000;
-  border: 1px solid var(--border-color);
-  padding: 15px;
-  border-radius: 4px;
-  overflow-x: auto;
-  margin: 15px 0;
-}
-
-code {
-  font-family: 'Courier New', Courier, monospace;
-  color: #4ade80;
-}
-
-/* Cuestionario */
-.pregunta {
-  margin-bottom: 20px;
-}
-
-.pregunta p {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.pregunta label {
-  display: block;
-  background: var(--bg-hover);
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid var(--border-color);
-}
-
-.pregunta label:hover {
-  border-color: var(--accent-red);
-}
-
-.btn-submit {
-  background-color: var(--accent-red);
-  color: #ffffff;
-  border: none;
-  padding: 12px 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 100%;
-}
-
-.btn-submit:hover {
-  background-color: #e02d22;
-}
-
-.correcto {
-  background-color: #143823 !important;
-  border-color: #22c55e !important;
-  color: #4ade80;
-}
-
-.incorrecto {
-  background-color: #451a1a !important;
-  border-color: #ef4444 !important;
-  color: #fca5a5;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--text-muted);
-  font-size: 12px;
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
+.carousel-item img {
+  height: 320px;
+  object-fit: cover;
 }

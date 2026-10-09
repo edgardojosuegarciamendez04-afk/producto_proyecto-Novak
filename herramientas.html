@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØVAK - Herramientas de Google</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="p-3 border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
+            <nav>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-danger me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+                <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+            <div class="d-flex gap-2">
+                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
+                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <h2 class="text-center mb-4" data-es="15 Herramientas Gratuitas de Google" data-en="15 Free Google Tools">15 Herramientas Gratuitas de Google</h2>
+
+        <!-- Carrusel Bootstrap Crossfade -->
+        <div id="carruselGoogle" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner rounded border border-secondary">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=800" class="d-block w-100" alt="Herramientas">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5 data-es="Productividad y Trabajo" data-en="Productivity & Work">Productividad y Trabajo</h5>
+                        <p data-es="Herramientas para documentos, cálculos y proyectos." data-en="Tools for documents, spreadsheets and projects.">Herramientas para documentos, cálculos y proyectos.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" class="d-block w-100" alt="Educación">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5 data-es="Organización Educativa" data-en="Educational Organization">Organización Educativa</h5>
+                        <p data-es="Plataformas para gestionar tareas y videollamadas." data-en="Platforms to manage tasks and video calls.">Plataformas para gestionar tareas y videollamadas.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" class="d-block w-100" alt="Investigación">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5 data-es="Investigación y Desarrollo" data-en="Research & Development">Investigación y Desarrollo</h5>
+                        <p data-es="Motores de búsqueda especializados e Inteligencia Artificial." data-en="Specialized search engines and Artificial Intelligence.">Motores de búsqueda especializados e Inteligencia Artificial.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselGoogle" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselGoogle" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- 15 Tarjetas con Enlaces -->
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">1. Google Gemini (IA)</h5>
+                    <p data-es="Asistente de inteligencia artificial de Google para redactar, resolver dudas y generar código." data-en="Google AI assistant to write, solve questions, and generate code.">Asistente de inteligencia artificial de Google para redactar, resolver dudas y generar código.</p>
+                    <a href="https://gemini.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Gemini" data-en="Go to Google Gemini">Ir a Google Gemini</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">2. Google Docs</h5>
+                    <p data-es="Procesador de textos en línea para redactar informes de forma colaborativa en tiempo real." data-en="Online word processor to write reports collaboratively in real time.">Procesador de textos en línea para redactar informes de forma colaborativa en tiempo real.</p>
+                    <a href="https://docs.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Docs" data-en="Go to Google Docs">Ir a Google Docs</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">3. Google Sheets</h5>
+                    <p data-es="Hoja de cálculo para organizar tablas, realizar fórmulas matemáticas y analizar datos." data-en="Spreadsheet to organize tables, perform mathematical formulas, and analyze data.">Hoja de cálculo para organizar tablas, realizar fórmulas matemáticas y analizar datos.</p>
+                    <a href="https://sheets.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Sheets" data-en="Go to Google Sheets">Ir a Google Sheets</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">4. Google Slides</h5>
+                    <p data-es="Editor de diapositivas para crear presentaciones visuales y exposiciones de proyectos." data-en="Slide editor to create visual presentations and project exhibitions.">Editor de diapositivas para crear presentaciones visuales y exposiciones de proyectos.</p>
+                    <a href="https://slides.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Slides" data-en="Go to Google Slides">Ir a Google Slides</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">5. Google Forms</h5>
+                    <p data-es="Herramienta para diseñar encuestas, cuestionarios de examen y recolectar respuestas." data-en="Tool to design surveys, exam quizzes, and collect responses.">Herramienta para diseñar encuestas, cuestionarios de examen y recolectar respuestas.</p>
+                    <a href="https://forms.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Forms" data-en="Go to Google Forms">Ir a Google Forms</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">6. Google Drive</h5>
+                    <p data-es="Servicio de almacenamiento seguro en la nube para guardar y compartir cualquier tipo de archivo." data-en="Secure cloud storage service to save and share any file type.">Servicio de almacenamiento seguro en la nube para guardar y compartir cualquier tipo de archivo.</p>
+                    <a href="https://drive.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Drive" data-en="Go to Google Drive">Ir a Google Drive</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">7. Google Classroom</h5>
+                    <p data-es="Entorno virtual educativo para recibir clases, organizar tareas y entregar proyectos académicos." data-en="Virtual educational environment to receive classes, organize homework, and submit projects.">Entorno virtual educativo para recibir clases, organizar tareas y entregar proyectos académicos.</p>
+                    <a href="https://classroom.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Classroom" data-en="Go to Google Classroom">Ir a Google Classroom</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">8. Google Meet</h5>
+                    <p data-es="Plataforma para realizar videollamadas, clases en vivo y reuniones virtuales de equipo." data-en="Platform to conduct video calls, live classes, and virtual team meetings.">Plataforma para realizar videollamadas, clases en vivo y reuniones virtuales de equipo.</p>
+                    <a href="https://meet.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Meet" data-en="Go to Google Meet">Ir a Google Meet</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">9. Google Calendar</h5>
+                    <p data-es="Agenda interactiva para programar entregas de tareas, exámenes y eventos importantes." data-en="Interactive calendar to schedule task submissions, exams, and important events.">Agenda interactiva para programar entregas de tareas, exámenes y eventos importantes.</p>
+                    <a href="https://calendar.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Calendar" data-en="Go to Google Calendar">Ir a Google Calendar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">10. Google Keep</h5>
+                    <p data-es="Bloc de notas rápidas para crear listas de verificación, guardar recordatorios y apuntes de voz." data-en="Quick notepad to create checklists, save reminders, and voice notes.">Bloc de notas rápidas para crear listas de verificación, guardar recordatorios y apuntes de voz.</p>
+                    <a href="https://keep.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Keep" data-en="Go to Google Keep">Ir a Google Keep</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">11. Google Sites</h5>
+                    <p data-es="Creador de páginas web informativas sencillas sin necesidad de escribir código complejo." data-en="Creator of simple informational web pages without writing complex code.">Creador de páginas web informativas sencillas sin necesidad de escribir código complejo.</p>
+                    <a href="https://sites.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Sites" data-en="Go to Google Sites">Ir a Google Sites</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">12. Google Scholar</h5>
+                    <p data-es="Buscador especializado en artículos científicos, tesis académicas y literatura de investigación." data-en="Search engine specialized in scientific articles, academic theses, and research literature.">Buscador especializado en artículos científicos, tesis académicas y literatura de investigación.</p>
+                    <a href="https://scholar.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Scholar" data-en="Go to Google Scholar">Ir a Google Scholar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">13. Google Translate</h5>
+                    <p data-es="Traductor automático de textos, archivos e imágenes en decenas de idiomas en tiempo real." data-en="Automatic translator of texts, files, and images in dozens of languages in real time.">Traductor automático de textos, archivos e imágenes en decenas de idiomas en tiempo real.</p>
+                    <a href="https://translate.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Translate" data-en="Go to Google Translate">Ir a Google Translate</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">14. Google Fonts</h5>
+                    <p data-es="Catálogo de tipografías y fuentes gratuitas para integrar en proyectos de diseño web." data-en="Catalog of free fonts to integrate into web design projects.">Catálogo de tipografías y fuentes gratuitas para integrar en proyectos de diseño web.</p>
+                    <a href="https://fonts.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a Google Fonts" data-en="Go to Google Fonts">Ir a Google Fonts</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-3">
+                    <h5 class="text-danger">15. AI Studio (Google)</h5>
+                    <p data-es="Entorno de desarrollo para probar y prototipar los modelos de IA más avanzados de Google." data-en="Development environment to test and prototype Google's advanced AI models.">Entorno de desarrollo para probar y prototipar los modelos de IA más avanzados de Google.</p>
+                    <a href="https://aistudio.google.com/" target="_blank" class="btn btn-outline-danger btn-sm mt-auto" data-es="Ir a AI Studio" data-en="Go to AI Studio">Ir a AI Studio</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

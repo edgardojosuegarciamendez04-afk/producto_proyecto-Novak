@@ -1,77 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØVAK - Cuestionario Web</title>
+    <title>NØVAK - Cuestionario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">NØV<span>AK</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="javascript.html">JavaScript</a></li>
-                <li><a href="jquery.html">jQuery</a></li>
-                <li><a href="json.html">JSON</a></li>
-                <li><a href="hosting.html">Hosting</a></li>
-                <li><a href="cuestionario.html" class="active">Cuestionario</a></li>
-            </ul>
-        </nav>
+
+    <header class="p-3 border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
+            <nav>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-danger me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+                <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+            <div class="d-flex gap-2">
+                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
+                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="card">
-            <h1>Cuestionario de Autoevaluación Web</h1>
-            <p>Ponte a prueba con estas preguntas basadas en la investigación teórica de la plataforma NØVAK.</p>
+    <main class="container my-5">
+        <div class="card p-4">
+            <h2 class="mb-4" data-es="Cuestionario de Repaso Web" data-en="Web Review Quiz">Cuestionario de Repaso Web</h2>
 
             <form id="quizForm">
-                <div class="pregunta">
-                    <p>1. ¿Cuál es la función principal de JavaScript en una tienda web como NØVAK?</p>
-                    <label><input type="radio" name="p1" value="a"> Definir los colores y maquetación visual de las prendas.</label>
-                    <label><input type="radio" name="p1" value="b"> Crear las etiquetas HTML para el encabezado del catálogo.</label>
-                    <label><input type="radio" name="p1" value="c"> Añadir interactividad, comportamiento y lógica de negocio.</label>
+                <div class="mb-3">
+                    <p class="fw-bold" data-es="1. ¿Qué tecnología le da interactividad a la tienda NØVAK?" data-en="1. Which technology adds interactivity to the NØVAK store?">1. ¿Qué tecnología le da interactividad a la tienda NØVAK?</p>
+                    <ul class="list-group">
+                        <label class="list-group-item"><input type="radio" name="p1" value="a"> HTML</label>
+                        <label class="list-group-item"><input type="radio" name="p1" value="b"> CSS</label>
+                        <label class="list-group-item"><input type="radio" name="p1" value="c"> JavaScript</label>
+                    </ul>
                 </div>
 
-                <div class="pregunta">
-                    <p>2. ¿Qué símbolo sirve como atajo principal para seleccionar elementos en jQuery?</p>
-                    <label><input type="radio" name="p2" value="a"> $</label>
-                    <label><input type="radio" name="p2" value="b"> #</label>
-                    <label><input type="radio" name="p2" value="c"> &amp;</label>
+                <div class="mb-3">
+                    <p class="fw-bold" data-es="2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?" data-en="2. Which symbol does jQuery basic syntax use?">2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?</p>
+                    <ul class="list-group">
+                        <label class="list-group-item"><input type="radio" name="p2" value="a"> $</label>
+                        <label class="list-group-item"><input type="radio" name="p2" value="b"> #</label>
+                        <label class="list-group-item"><input type="radio" name="p2" value="c"> &amp;</label>
+                    </ul>
                 </div>
 
-                <div class="pregunta">
-                    <p>3. ¿JSON es un formato de texto plano utilizado para el intercambio de datos entre cliente y servidor?</p>
-                    <label><input type="radio" name="p3" value="a"> Verdadero</label>
-                    <label><input type="radio" name="p3" value="b"> Falso</label>
+                <div class="mb-3">
+                    <p class="fw-bold" data-es="3. ¿JSON es un formato para transmitir información entre cliente y servidor?" data-en="3. Is JSON a format to transmit information between client and server?">3. ¿JSON es un formato para transmitir información entre cliente y servidor?</p>
+                    <ul class="list-group">
+                        <label class="list-group-item"><input type="radio" name="p3" value="a" data-es="Verdadero" data-en="True"> Verdadero</label>
+                        <label class="list-group-item"><input type="radio" name="p3" value="b" data-es="Falso" data-en="False"> Falso</label>
+                    </ul>
                 </div>
 
-                <div class="pregunta">
-                    <p>4. ¿Qué ventaja ofrece la plataforma Vercel al publicar la web de NØVAK?</p>
-                    <label><input type="radio" name="p4" value="a"> Diseña los patrones de costura de la colección automáticamente.</label>
-                    <label><input type="radio" name="p4" value="b"> Permite desplegar el sitio estático desde GitHub en una red global en segundos.</label>
-                    <label><input type="radio" name="p4" value="c"> Edita las fotografías de las prendas en alta resolución.</label>
+                <div class="mb-3">
+                    <p class="fw-bold" data-es="4. ¿Cuál es una ventaja de Vercel?" data-en="4. What is an advantage of Vercel?">4. ¿Cuál es una ventaja de Vercel?</p>
+                    <label class="list-group-item"><input type="radio" name="p4" value="a" data-es="Diseña ropa automáticamente." data-en="Designs clothes automatically."> Diseña ropa automáticamente.</label>
+                    <label class="list-group-item"><input type="radio" name="p4" value="b" data-es="Despliega páginas web directamente desde GitHub." data-en="Deploys web pages directly from GitHub."> Despliega páginas web directamente desde GitHub.</label>
                 </div>
 
-                <div class="pregunta">
-                    <p>5. ¿Cuál es la función del sistema DNS al navegar en un sitio web?</p>
-                    <label><input type="radio" name="p5" value="a"> Traducir el nombre de dominio alfanumérico a una dirección IP legible por el servidor.</label>
-                    <label><input type="radio" name="p5" value="b"> Validar automáticamente los pagos de las prendas seleccionadas.</label>
-                    <label><input type="radio" name="p5" value="c"> Aplicar códigos de descuento a los carritos de compra.</label>
+                <div class="mb-4">
+                    <p class="fw-bold" data-es="5. ¿Qué hace el sistema DNS?" data-en="5. What does the DNS system do?">5. ¿Qué hace el sistema DNS?</p>
+                    <label class="list-group-item"><input type="radio" name="p5" value="a" data-es="Traduce un nombre de dominio a una dirección IP." data-en="Translates a domain name into an IP address."> Traduce un nombre de dominio a una dirección IP.</label>
+                    <label class="list-group-item"><input type="radio" name="p5" value="b" data-es="Procesa cobros con tarjetas." data-en="Processes credit card payments."> Procesa cobros con tarjetas.</label>
                 </div>
 
-                <button type="button" class="btn-submit" onclick="evaluarQuiz()">Comprobar Respuestas</button>
+                <button type="button" class="btn btn-danger w-100 fw-bold" onclick="evaluarQuiz()" data-es="Comprobar Respuestas" data-en="Check Answers">Comprobar Respuestas</button>
             </form>
 
             <div id="resultado"></div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 NØVAK Studio. Todos los derechos reservados.</p>
-    </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØVAK - Web Hosting y Dominios</title>
+    <title>NØVAK - Web Hosting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">NØV<span>AK</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="javascript.html">JavaScript</a></li>
-                <li><a href="jquery.html">jQuery</a></li>
-                <li><a href="json.html">JSON</a></li>
-                <li><a href="hosting.html" class="active">Hosting</a></li>
-                <li><a href="cuestionario.html">Cuestionario</a></li>
-            </ul>
-        </nav>
+
+    <header class="p-3 border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
+            <nav>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-danger me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+                <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+            <div class="d-flex gap-2">
+                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
+                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="card">
-            <h1>Web Hosting y Dominios</h1>
-            <h2>Web Hosting</h2>
-            <p>Es el servicio que almacena los archivos de tu sitio web para que estén disponibles en Internet. **Vercel** es una plataforma en la nube optimizada para desplegar proyectos frontend vinculando repositorios de GitHub automáticamente.</p>
+    <main class="container my-5">
+        <div class="card p-4">
+            <h2 data-es="Web Hosting y Dominios" data-en="Web Hosting & Domains">Web Hosting y Dominios</h2>
+            <p><strong>Hosting:</strong> <span data-es="Servidor que guarda los archivos web. Vercel despliega proyectos estáticos directamente desde GitHub." data-en="Server that stores web files. Vercel deploys static projects directly from GitHub.">Servidor que guarda los archivos web. Vercel despliega proyectos estáticos directamente desde GitHub.</span></p>
+            <p><strong>Dominio / Domain:</strong> <span data-es="La dirección de tu sitio (ej. novakwear.com)." data-en="Your site address (e.g., novakwear.com).">La dirección de tu sitio (ej. novakwear.com).</span></p>
+            <p><strong>DNS:</strong> <span data-es="Sistema que convierte el nombre del dominio en una dirección IP del servidor." data-en="System that converts domain name into a server IP address.">Sistema que convierte el nombre del dominio en una dirección IP del servidor.</span></p>
+        </div>
+    </main>
 
-            <h2>Dominios</h2>
-            <ul>
-                <li><strong>Dominio principal:</strong> <code>novakwear.com</code></li>
-                <li><strong>TLD:</strong> Extensión como <code>.com</code>, <code>.net</code> o <code>.org</code>.</li>
-                <li><strong>Sub
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

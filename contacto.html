@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NØVAK - Contáctanos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="p-3 border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
+            <nav>
+                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+                <a href="contacto.html" class="btn btn-sm btn-danger" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+            <div class="d-flex gap-2">
+                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
+                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="card p-4">
+            <h2 class="text-center mb-4 text-danger fw-bold" data-es="CONTÁCTANOS" data-en="CONTACT US">CONTÁCTANOS</h2>
+            
+            <div class="row g-4 align-items-center">
+                <!-- Columna Izquierda: Formulario -->
+                <div class="col-md-7">
+                    
+                    <!-- Alerta de mensaje enviado -->
+                    <div id="alerta-contacto" class="alert alert-success text-center fw-bold d-none" role="alert" data-es="Este mensaje ha sido enviado" data-en="This message has been sent">
+                        Este mensaje ha sido enviado
+                    </div>
+
+                    <form id="form-contacto">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label fw-bold" data-es="NOMBRE" data-en="NAME">NOMBRE</label>
+                            <input type="text" class="form-control" id="nombre" data-es-placeholder="Ingresa tu nombre completo" data-en-placeholder="Enter your full name" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-bold" data-es="EMAIL" data-en="EMAIL">EMAIL</label>
+                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label fw-bold" data-es="MENSAJE" data-en="MESSAGE">MENSAJE</label>
+                            <textarea class="form-control" id="mensaje" rows="4" data-es-placeholder="Escribe tu consulta o mensaje aquí..." data-en-placeholder="Write your query or message here..." placeholder="Escribe tu consulta o mensaje aquí..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger w-100 fw-bold" data-es="ENVIAR" data-en="SEND">ENVIAR</button>
+                    </form>
+                </div>
+
+                <!-- Columna Derecha: Información -->
+                <div class="col-md-5">
+                    <div class="p-3 border rounded border-secondary bg-body-tertiary">
+                        <h4 class="text-danger fw-bold mb-3" data-es="INFORMACIÓN NØVAK" data-en="NØVAK INFORMATION">INFORMACIÓN NØVAK</h4>
+                        <p class="mb-2"><strong data-es="Atención a Clientes:" data-en="Customer Support:">Atención a Clientes:</strong> <span data-es="Soporte directo para pedidos y consultas generales." data-en="Direct support for orders and general queries.">Soporte directo para pedidos y consultas generales.</span></p>
+                        <hr>
+                        <p class="mb-2"><strong data-es="Horario de Atención:" data-en="Business Hours:">Horario de Atención:</strong> <span data-es="Lunes a Viernes de 8:00 AM a 5:00 PM." data-en="Monday to Friday from 8:00 AM to 5:00 PM.">Lunes a Viernes de 8:00 AM a 5:00 PM.</span></p>
+                        <hr>
+                        <p class="mb-0"><strong data-es="Ubicación:" data-en="Location:">Ubicación:</strong> San Salvador, El Salvador.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

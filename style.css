@@ -1,34 +1,94 @@
-/* Transiciones suaves para scroll y cambio de tema */
+/* ==========================================================================
+   NØVAK Streetwear - Estilos Globales
+   ========================================================================== */
+
+:root {
+  --transition-speed: 0.25s;
+  --brand-red: #ff3b30;
+  --brand-black: #0a0a0c;
+  --brand-gray: #e2e8f0;
+}
+
+/* Transiciones suaves globales */
 html {
   scroll-behavior: smooth;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Logo NØVAK */
+/* --------------------------------------------------------------------------
+   Logo de Marca NØVAK
+   -------------------------------------------------------------------------- */
 .brand-logo {
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
 }
 
 .brand-logo span {
-  color: #ff3b30;
+  color: var(--brand-red);
 }
 
-/* Efectos visuales en tarjetas */
-.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* --------------------------------------------------------------------------
+   Tarjetas, Catálogo y Productos (Oversized, Baggy, Vaqueros)
+   -------------------------------------------------------------------------- */
+.card, .card-producto {
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.card:hover, .card-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(255, 59, 48, 0.2);
 }
 
-.carousel-item img {
-  height: 320px;
+/* Imágenes para las prendas de la colección */
+.feature-img, .img-producto {
+  height: 260px;
   object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Botones de Interfaz (Modo Claro/Oscuro & Idioma)
+   -------------------------------------------------------------------------- */
+.btn-toggle-ui {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-toggle-ui:hover {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   Carrusel de la sección Herramientas Google
+   -------------------------------------------------------------------------- */
+.carousel-item img {
+  height: 340px;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Bloques de Código
+   -------------------------------------------------------------------------- */
+pre {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
 }

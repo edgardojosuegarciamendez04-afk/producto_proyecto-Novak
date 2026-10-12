@@ -1,50 +1,69 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NØVAK - JavaScript</title>
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            var l = localStorage.getItem('lang') || 'es';
+            document.documentElement.setAttribute('data-bs-theme', t);
+            document.documentElement.setAttribute('lang', l);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="p-3 border-bottom border-danger">
-        <div class="container d-flex justify-content-between align-items-center">
+    <header class="p-3 border-bottom border-danger sticky-top bg-body">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
-            <nav>
-                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="javascript.html" class="btn btn-sm btn-danger me-1">JavaScript</a>
-                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
-                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
-                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
-                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <nav class="d-flex flex-wrap gap-1">
+                <a href="index.html" class="btn btn-sm btn-outline-secondary" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-danger">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
-            <div class="d-flex gap-2">
-                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
-                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            <div class="d-flex gap-2 align-items-center">
+                <button id="btn-lang" class="btn btn-outline-danger btn-toggle-ui"><span id="lang-text">English</span></button>
+                <button id="btn-theme" class="btn btn-outline-light btn-toggle-ui"><span id="theme-icon"></span><span id="theme-text">Modo Claro</span></button>
             </div>
         </div>
     </header>
 
     <main class="container my-5">
-        <div class="card p-4">
-            <h2>JavaScript (JS Vanilla)</h2>
-            <p data-es="Es un lenguaje de programación interpretado que añade interactividad a las páginas web." data-en="It is an interpreted programming language that adds interactivity to web pages.">Es un lenguaje de programación interpretado que añade interactividad a las páginas web.</p>
-            
-            <h4 class="mt-3" data-es="Diferencias clave:" data-en="Key differences:">Diferencias clave:</h4>
-            <ul>
-                <li><strong>HTML:</strong> <span data-es="Estructura el contenido." data-en="Structures the content.">Estructura el contenido.</span></li>
-                <li><strong>CSS:</strong> <span data-es="Agrega estilos visuales." data-en="Adds visual styles.">Agrega estilos visuales.</span></li>
-                <li><strong>JavaScript:</strong> <span data-es="Maneja la lógica y las acciones del usuario." data-en="Handles logic and user actions.">Maneja la lógica y las acciones del usuario.</span></li>
-            </ul>
+        <div class="row align-items-center mb-5 g-4">
+            <div class="col-lg-7">
+                <h2>JavaScript (JS Vanilla)</h2>
+                <p class="lead" data-es="JavaScript es un lenguaje de programación interpretado e interactivo que impulsa la lógica en el navegador." data-en="JavaScript is an interpreted, interactive programming language that drives logic in the browser.">JavaScript es un lenguaje de programación interpretado e interactivo que impulsa la lógica en el navegador.</p>
+                
+                <h4 class="mt-4 text-danger" data-es="Diferencias Clave" data-en="Key Differences">Diferencias Clave</h4>
+                <ul>
+                    <li><strong>HTML:</strong> <span data-es="Define el contenido y la estructura básica del documento." data-en="Defines the basic document content and structure.">Define el contenido y la estructura básica del documento.</span></li>
+                    <li><strong>CSS:</strong> <span data-es="Aplica colores, tipografías y el diseño estético de la marca." data-en="Applies colors, typography, and brand visual styling.">Aplica colores, tipografías y el diseño estético de la marca.</span></li>
+                    <li><strong>JavaScript:</strong> <span data-es="Procesa las respuestas a eventos, cálculos y lógica interactiva." data-en="Processes event responses, calculations, and interactive logic.">Procesa las respuestas a eventos, cálculos y lógica interactiva.</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop" class="img-fluid rounded border border-secondary shadow" alt="JavaScript Code">
+            </div>
+        </div>
 
-            <h4 class="mt-3" data-es="Ejemplo Práctico:" data-en="Practical Example:">Ejemplo Práctico:</h4>
-            <pre class="bg-black text-success p-3 rounded"><code>const boton = document.getElementById("btn-comprar");
-boton.addEventListener("click", function() {
-    alert("¡Prenda NØVAK agregada al carrito!");
+        <div class="card p-4">
+            <h4 class="text-danger" data-es="Ejemplo de Evento Clic en Pantalla" data-en="On-Screen Click Event Example">Ejemplo de Evento Clic en Pantalla</h4>
+            <p data-es="Este código escucha el evento 'click' del usuario y responde con una alerta interactiva sin recargar la página:" data-en="This code listens for user click events and responds with an interactive alert without reloading:">Este código escucha el evento 'click' del usuario y responde con una alerta interactiva sin recargar la página:</p>
+            <pre class="bg-black text-success p-3 rounded"><code>// Selecciona el botón de compra
+const btnComprar = document.getElementById("btn-comprar");
+
+// Registra la interacción del cliente
+btnComprar.addEventListener("click", function() {
+    alert("¡Prenda NØVAK agregada al carrito con éxito!");
 });</code></pre>
         </div>
     </main>

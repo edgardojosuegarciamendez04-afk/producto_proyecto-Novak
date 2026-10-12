@@ -1,45 +1,64 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NØVAK - JSON</title>
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            var l = localStorage.getItem('lang') || 'es';
+            document.documentElement.setAttribute('data-bs-theme', t);
+            document.documentElement.setAttribute('lang', l);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="p-3 border-bottom border-danger">
-        <div class="container d-flex justify-content-between align-items-center">
+    <header class="p-3 border-bottom border-danger sticky-top bg-body">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
-            <nav>
-                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
-                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
-                <a href="json.html" class="btn btn-sm btn-danger me-1">JSON</a>
-                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
-                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <nav class="d-flex flex-wrap gap-1">
+                <a href="index.html" class="btn btn-sm btn-outline-secondary" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-danger">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
-            <div class="d-flex gap-2">
-                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
-                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            <div class="d-flex gap-2 align-items-center">
+                <button id="btn-lang" class="btn btn-outline-danger btn-toggle-ui"><span id="lang-text">English</span></button>
+                <button id="btn-theme" class="btn btn-outline-light btn-toggle-ui"><span id="theme-icon"></span><span id="theme-text">Modo Claro</span></button>
             </div>
         </div>
     </header>
 
     <main class="container my-5">
-        <div class="card p-4">
-            <h2>JSON (JavaScript Object Notation)</h2>
-            <p data-es="Formato de texto ligero utilizado para transferir datos de productos o inventario entre el cliente y el servidor." data-en="Lightweight text format used to transfer product or inventory data between client and server.">Formato de texto ligero utilizado para transferir datos de productos o inventario entre el cliente y el servidor.</p>
+        <div class="row align-items-center mb-5 g-4">
+            <div class="col-lg-7">
+                <h2>JSON (JavaScript Object Notation)</h2>
+                <p class="lead" data-es="Formato de intercambio de datos ligero, basado en texto plano e independiente del lenguaje de programación." data-en="Lightweight, text-based data interchange format independent of any programming language.">Formato de intercambio de datos ligero, basado en texto plano e independiente del lenguaje de programación.</p>
 
-            <h4 class="mt-3" data-es="Ejemplo de Estructura JSON:" data-en="JSON Structure Example:">Ejemplo de Estructura JSON:</h4>
+                <h4 class="text-danger mt-4" data-es="¿Por qué es el estándar web?" data-en="Why is it the Web Standard?">¿Por qué es el estándar web?</h4>
+                <p data-es="Es extremadamente liviano, fácil de interpretar para los humanos y muy eficiente para ser procesado por servidores y aplicaciones web mediante APIs." data-en="It is extremely lightweight, easy for humans to read, and highly efficient for servers and APIs to parse.">Es extremadamente liviano, fácil de interpretar para los humanos y muy eficiente para ser procesado por servidores y aplicaciones web mediante APIs.</p>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop" class="img-fluid rounded border border-secondary shadow" alt="Data Flow JSON">
+            </div>
+        </div>
+
+        <div class="card p-4">
+            <h4 class="text-danger mb-3" data-es="Estructura de Inventario NØVAK en JSON" data-en="NØVAK Inventory Structure in JSON">Estructura de Inventario NØVAK en JSON</h4>
             <pre class="bg-black text-success p-3 rounded"><code>{
-  "producto": "Chaqueta NØVAK",
-  "precio": 85.00,
+  "coleccion": "NØVAK Drop 01",
+  "producto": "Pulse Modular Jacket",
+  "precio": 89.99,
   "disponible": true,
-  "tallas": ["S", "M", "L"]
+  "tallas": ["S", "M", "L", "XL"]
 }</code></pre>
         </div>
     </main>

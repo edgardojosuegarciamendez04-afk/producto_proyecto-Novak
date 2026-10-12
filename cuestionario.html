@@ -1,41 +1,57 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NØVAK - Cuestionario</title>
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            var l = localStorage.getItem('lang') || 'es';
+            document.documentElement.setAttribute('data-bs-theme', t);
+            document.documentElement.setAttribute('lang', l);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="p-3 border-bottom border-danger">
-        <div class="container d-flex justify-content-between align-items-center">
+    <header class="p-3 border-bottom border-danger sticky-top bg-body">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
-            <nav>
-                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
-                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
-                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
-                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
-                <a href="cuestionario.html" class="btn btn-sm btn-danger me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <nav class="d-flex flex-wrap gap-1">
+                <a href="index.html" class="btn btn-sm btn-outline-secondary" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-danger" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
-            <div class="d-flex gap-2">
-                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
-                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            <div class="d-flex gap-2 align-items-center">
+                <button id="btn-lang" class="btn btn-outline-danger btn-toggle-ui"><span id="lang-text">English</span></button>
+                <button id="btn-theme" class="btn btn-outline-light btn-toggle-ui"><span id="theme-icon"></span><span id="theme-text">Modo Claro</span></button>
             </div>
         </div>
     </header>
 
     <main class="container my-5">
-        <div class="card p-4">
-            <h2 class="mb-4" data-es="Cuestionario de Repaso Web" data-en="Web Review Quiz">Cuestionario de Repaso Web</h2>
+        <div class="row align-items-center mb-4 g-4">
+            <div class="col-lg-8">
+                <h2 data-es="Cuestionario de Autoevaluación" data-en="Self-Assessment Quiz">Cuestionario de Autoevaluación</h2>
+                <p class="lead" data-es="Ponte a prueba respondiendo estas 5 preguntas basadas en la investigación del proyecto." data-en="Test your knowledge by answering these 5 questions based on project research.">Ponte a prueba respondiendo estas 5 preguntas basadas en la investigación del proyecto.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop" class="img-fluid rounded border border-secondary shadow" alt="Learning Quiz">
+            </div>
+        </div>
 
+        <div class="card p-4">
             <form id="quizForm">
-                <div class="mb-3">
-                    <p class="fw-bold" data-es="1. ¿Qué tecnología le da interactividad a la tienda NØVAK?" data-en="1. Which technology adds interactivity to the NØVAK store?">1. ¿Qué tecnología le da interactividad a la tienda NØVAK?</p>
+                <div class="mb-4">
+                    <p class="fw-bold fs-5" data-es="1. ¿Qué tecnología le da interactividad a la tienda NØVAK?" data-en="1. Which technology adds interactivity to the NØVAK store?">1. ¿Qué tecnología le da interactividad a la tienda NØVAK?</p>
                     <ul class="list-group">
                         <label class="list-group-item"><input type="radio" name="p1" value="a"> HTML</label>
                         <label class="list-group-item"><input type="radio" name="p1" value="b"> CSS</label>
@@ -43,8 +59,8 @@
                     </ul>
                 </div>
 
-                <div class="mb-3">
-                    <p class="fw-bold" data-es="2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?" data-en="2. Which symbol does jQuery basic syntax use?">2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?</p>
+                <div class="mb-4">
+                    <p class="fw-bold fs-5" data-es="2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?" data-en="2. Which symbol does jQuery basic syntax use?">2. ¿Qué símbolo utiliza la sintaxis básica de jQuery?</p>
                     <ul class="list-group">
                         <label class="list-group-item"><input type="radio" name="p2" value="a"> $</label>
                         <label class="list-group-item"><input type="radio" name="p2" value="b"> #</label>
@@ -52,27 +68,31 @@
                     </ul>
                 </div>
 
-                <div class="mb-3">
-                    <p class="fw-bold" data-es="3. ¿JSON es un formato para transmitir información entre cliente y servidor?" data-en="3. Is JSON a format to transmit information between client and server?">3. ¿JSON es un formato para transmitir información entre cliente y servidor?</p>
+                <div class="mb-4">
+                    <p class="fw-bold fs-5" data-es="3. ¿JSON es un formato para transmitir información entre cliente y servidor?" data-en="3. Is JSON a format to transmit information between client and server?">3. ¿JSON es un formato para transmitir información entre cliente y servidor?</p>
                     <ul class="list-group">
                         <label class="list-group-item"><input type="radio" name="p3" value="a" data-es="Verdadero" data-en="True"> Verdadero</label>
                         <label class="list-group-item"><input type="radio" name="p3" value="b" data-es="Falso" data-en="False"> Falso</label>
                     </ul>
                 </div>
 
-                <div class="mb-3">
-                    <p class="fw-bold" data-es="4. ¿Cuál es una ventaja de Vercel?" data-en="4. What is an advantage of Vercel?">4. ¿Cuál es una ventaja de Vercel?</p>
-                    <label class="list-group-item"><input type="radio" name="p4" value="a" data-es="Diseña ropa automáticamente." data-en="Designs clothes automatically."> Diseña ropa automáticamente.</label>
-                    <label class="list-group-item"><input type="radio" name="p4" value="b" data-es="Despliega páginas web directamente desde GitHub." data-en="Deploys web pages directly from GitHub."> Despliega páginas web directamente desde GitHub.</label>
+                <div class="mb-4">
+                    <p class="fw-bold fs-5" data-es="4. ¿Cuál es una ventaja de la plataforma Vercel?" data-en="4. What is an advantage of the Vercel platform?">4. ¿Cuál es una ventaja de la plataforma Vercel?</p>
+                    <ul class="list-group">
+                        <label class="list-group-item"><input type="radio" name="p4" value="a" data-es="Diseña ropa automáticamente." data-en="Designs clothes automatically."> Diseña ropa automáticamente.</label>
+                        <label class="list-group-item"><input type="radio" name="p4" value="b" data-es="Despliega páginas web directamente desde GitHub." data-en="Deploys web pages directly from GitHub."> Despliega páginas web directamente desde GitHub.</label>
+                    </ul>
                 </div>
 
                 <div class="mb-4">
-                    <p class="fw-bold" data-es="5. ¿Qué hace el sistema DNS?" data-en="5. What does the DNS system do?">5. ¿Qué hace el sistema DNS?</p>
-                    <label class="list-group-item"><input type="radio" name="p5" value="a" data-es="Traduce un nombre de dominio a una dirección IP." data-en="Translates a domain name into an IP address."> Traduce un nombre de dominio a una dirección IP.</label>
-                    <label class="list-group-item"><input type="radio" name="p5" value="b" data-es="Procesa cobros con tarjetas." data-en="Processes credit card payments."> Procesa cobros con tarjetas.</label>
+                    <p class="fw-bold fs-5" data-es="5. ¿Cuál es la función del sistema DNS?" data-en="5. What is the main function of the DNS system?">5. ¿Cuál es la función del sistema DNS?</p>
+                    <ul class="list-group">
+                        <label class="list-group-item"><input type="radio" name="p5" value="a" data-es="Traducir nombres de dominio a direcciones IP." data-en="Translates domain names to IP addresses."> Traducir nombres de dominio a direcciones IP.</label>
+                        <label class="list-group-item"><input type="radio" name="p5" value="b" data-es="Procesar cobros con tarjeta de crédito." data-en="Processes credit card payments."> Procesar cobros con tarjeta de crédito.</label>
+                    </ul>
                 </div>
 
-                <button type="button" class="btn btn-danger w-100 fw-bold" onclick="evaluarQuiz()" data-es="Comprobar Respuestas" data-en="Check Answers">Comprobar Respuestas</button>
+                <button type="button" class="btn btn-danger w-100 fw-bold fs-5 py-2" onclick="evaluarQuiz()" data-es="Comprobar Respuestas" data-en="Check Answers">Comprobar Respuestas</button>
             </form>
 
             <div id="resultado"></div>

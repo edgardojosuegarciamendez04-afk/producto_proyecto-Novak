@@ -3,56 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØVAK - Inicio</title>
+    <title>NØVAK - Streetwear & Catálogo</title>
+    
+    <!-- Script de precarga para evitar parpadeos -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            var l = localStorage.getItem('lang') || 'es';
+            document.documentElement.setAttribute('data-bs-theme', t);
+            document.documentElement.setAttribute('lang', l);
+        })();
+    </script>
+    
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Estilos directos integrados para garantizar el catálogo -->
+    <style>
+        :root {
+            --brand-red: #ff3b30;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .brand-logo {
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .brand-logo span {
+            color: var(--brand-red);
+        }
+        .card-producto {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card-producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.25);
+        }
+        .img-producto {
+            height: 280px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .btn-toggle-ui {
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="p-3 border-bottom border-danger">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="./imagenes/" alt="">
+    <!-- Encabezado de Navegación -->
+    <header class="p-3 border-bottom border-danger sticky-top bg-body">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
-            <nav>
-                <a href="index.html" class="btn btn-sm btn-danger me-1" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
-                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
-                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
-                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
-                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <nav class="d-flex flex-wrap gap-1">
+                <a href="index.html" class="btn btn-sm btn-danger" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-outline-secondary" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
-            <div class="d-flex gap-2">
-                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
-                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            <div class="d-flex gap-2 align-items-center">
+                <button id="btn-lang" class="btn btn-outline-danger btn-toggle-ui"><span id="lang-text">English</span></button>
+                <button id="btn-theme" class="btn btn-outline-light btn-toggle-ui"><span id="theme-text">Modo Claro</span></button>
             </div>
         </div>
     </header>
 
     <main class="container my-5">
-        <div class="row align-items-center mb-5">
-            <div class="col-md-6">
-                <h2 class="display-5 fw-bold">NØVAK Streetwearr</h2>
-                <p class="lead" data-es="Línea de ropa urbana técnica con estética industrial y minimalista." data-en="Technical streetwear line with industrial and minimalist aesthetics.">Línea de ropa urbana técnica con estética industrial y minimalista.</p>
-                <p><strong data-es="Propuesta de Valor:" data-en="Value Proposition:">Propuesta de Valor:</strong> <span data-es="Diseño funcional y atemporal para la vida moderna en la ciudad." data-en="Functional and timeless design for modern city life.">Diseño funcional y atemporal para la vida moderna en la ciudad.</span></p>
+        <!-- Banner Principal Hero -->
+        <div class="row align-items-center mb-5 g-4">
+            <div class="col-lg-6">
+                <h2 class="display-4 fw-bold">NØVAK</h2>
+                <p class="lead" data-es="Tienda de ropa urbana y original baggys, oversized y lo mejor en tendencia" data-en="Technical streetwear brand featuring oversized cuts, baggy pants, and industrial denim.">Marca urbana técnica de corte oversized, pantalones baggy y vaqueros industriales.</p>
+                <a href="#cat-productos" class="btn btn-danger fw-bold px-4 py-2" data-es="Ver Catálogo de Ropa" data-en="View Clothing Catalog">Ver Catálogo de Ropa</a>
             </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&auto=format&fit=crop" class="img-fluid rounded border border-secondary" alt="Ropa NØVAK">
+            <div class="col-lg-6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP-7csVnGP85TNfvWXfamuNRe1H7GfASu0gPA5DSpdnFGIGs3sTckniDc&s=10" class="img-fluid rounded border border-secondary shadow-lg" alt="NØVAK Streetwear">
             </div>
         </div>
 
-        <div class="card p-4">
-            <h3 data-es="Paleta de Colores" data-en="Color Palette">Paleta de Colores</h3>
-            <ul>
-                <li><code>#0A0A0C</code> - <span data-es="Negro Ónix (Fondo principal)" data-en="Onyx Black (Main background)">Negro Ónix (Fondo principal)</span></li>
-                <li><code>#E2E8F0</code> - <span data-es="Gris Frío (Textos y contrastes)" data-en="Cool Gray (Text and contrasts)">Gris Frío (Textos y contrastes)</span></li>
-                <li><code>#FF3B30</code> - <span data-es="Rojo Neón (Acentos de la marca)" data-en="Neon Red (Brand accents)">Rojo Neón (Acentos de la marca)</span></li>
-            </ul>
-        </div>
+        <!-- SECCIÓN CATÁLOGO DE PRODUCTOS -->
+        <section id="cat-productos" class="my-5">
+            <h2 class="text-center mb-2 fw-bold text-danger text-uppercase" data-es="Colección de Ropa NØVAK" data-en="NØVAK Clothing Collection">Colección de Ropa NØVAK</h2>
+            <p class="text-center text-secondary mb-5" data-es="Explora nuestras prendas oversized, pantalones baggy y zapatos de moda" data-en="Explore our oversized garments, baggy pants, and tactical denim.">Explora nuestras prendas oversized, pantalones baggy y vaqueros tácticos.</p>
+
+            <div class="row g-4">
+                <!-- Producto 1: Sudadera Oversized -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFk1u11gLHPisO-o7xdN1J2XgAVCnTjg3uOtedajFZPN2ZEMnywqKkAmM&s=10" class="img-producto" alt="Sudadera Oversized">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-danger" data-es="Pantalon Baggy" data-en="Oversized Fit">Corte Oversized</span>
+                                <span class="fw-bold text-danger fs-5">$25.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Baggy Negro con Estampado bordado</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="pantalón de mezclilla/denim negro de corte holgado con bordados blancos de cruces góticas y arabescos en los bolsillos traseros y costuras en contraste blanco." data-en="Heavyweight 450 GSM cotton hoodie with dropped shoulders and industrial design.">Sudadera holgada de algodón pesado de 450 GSM con hombros caídos y diseño industrial.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Sudadera Oversized agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Pantalón Baggy Negro -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuXHD6IyB0EAAxS3EreTfFkacWusFUPNi0W3130NRwEvIsRiDoC8bJLVyI&s=10" class="img-producto" alt="Pantalón Baggy">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary" data-es="Pantalon Baggy" data-en="Baggy Style">Estilo Baggy</span>
+                                <span class="fw-bold text-danger fs-5">$20.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold"> Pantalon Baggy Azul</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Pantalón de mezclilla azul claro de corte bastante holgado con parches en forma de cruces deshilachadas distribuidos a lo largo de las piernas" data-en="Wide-leg baggy pants with side tactical pockets and ripstop thread.">Pantalón baggy ancho con bolsillos tácticos laterales e hilo reforzado anti-rasgaduras.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Pantalón Baggy agregado al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Jeans Baggy Azul -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://i.etsystatic.com/64606550/r/il/45e975/8329297355/il_fullxfull.8329297355_lw52.jpg" class="img-producto" alt="Jeans Vaqueros Wide Leg">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-dark border" data-es="Pantalon Baggy" data-en="Baggy Style">Vaqueros / Denim</span>
+                                <span class="fw-bold text-danger fs-5">$30.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Pantalon Baggy Negro con estamppados brillantes</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Pantalón de mezclilla negro o lavado oscuro de pernera ancha, decorado con grandes cruces góticas hechas de apliques brillantes y un patrón de destellos bordados en la parte frontal" data-en="Wide-leg rigid denim jeans with dark industrial vintage wash.">Pantalones vaqueros de corte ancho recto con lavado oscuro industrial rígido.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Jeans Vaqueros agregados al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4: Camiseta Oversized -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7giogXr-lV0hAMpjk9pbZhrdUk4EG6V1HDEcRxaqz4AIyzRZV3wbIQA60&s=10" class="img-producto" alt="Camiseta Oversized">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-danger" data-es="Boxy Oversized" data-en="Boxy Oversized">Boxy Oversized</span>
+                                <span class="fw-bold text-danger fs-5">$15.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Boxy Oversized Tee</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Camiseta negra con la palabra Godspeed y una ilustración central detallada en tonos azul de la Estatua de la Libertad con la cara cubierta por vendas" data-en="Wide short sleeve boxy tee made of heavy cotton fabric.">Camiseta de manga corta ancha y corte cuadrado en tejido de algodón grueso.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Camiseta Oversized agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 5: Camiseta Oversized -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGreSbi5JZBJRkpeP6KCu6LK-MwEzE59adTx3GoukG-p6C_fj9cw3d-Mw5&s=10" class="img-producto" alt="Chaqueta Táctica">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary" data-es="Boxy Oversized" data-en="Tactical Jacket">Boxy Oversized</span>
+                                <span class="fw-bold text-danger fs-5">$15.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Boxy Oversized Tee</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Camiseta de color negro con un gráfico estilo streetwear de un ángel vendado de los ojos sosteniendo un arco, acompañado de la palabra Underworld y rayo de luz rojo en el fondo" data-en="Windbreaker jacket with waterproof fabric and magnetic detachable pockets.">Chaqueta cortavientos con tela impermeable y bolsillos desmontables con imán.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Chaqueta agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 6: Gorra-->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhXLKEcL6pMoL44z0awvl-uuVSlPzE3HwaSUN9jHDS7nSq0cGI2UpvsZbV&s=10" class="img-producto" alt="Gorro Beanie">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-dark border" data-es="Accesorio" data-en="Accessory">Accesorio</span>
+                                <span class="fw-bold text-danger fs-5">$30.00 x 3</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Gorra</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Trío de gorras de visera plana de color negro. Cuentan con bordados metálicos/rosados de logos de equipos deportivos, acompañados de detalles florales de cerezo" data-en="Ribbed acrylic beanie with engraved metallic brand patch.">Gorro de lana acrílica acanalada con parche metálico de la marca.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Gorro Beanie agregado al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                  <!-- Producto 5: zapatos lefrance -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlXcz_dhDc5a_g_vSK1Cm-IPiEJKP6mzf_t1xmjvjhe_PwzyyXil6OVC0&s=10" class="img-producto" alt="Chaqueta Táctica">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary" data-es="Zapatos" data-en="Tactical Jacket">Zapatos Le France</span>
+                                <span class="fw-bold text-danger fs-5">$85.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Zapatos Puma LaFrance x Lamelo Ball</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Zapatos Puma LeFrance en colaboracion con el baskenbolista Lamelo Ball" data-en="Windbreaker jacket with waterproof fabric and magnetic detachable pockets.">Chaqueta cortavientos con tela impermeable y bolsillos desmontables con imán.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Chaqueta agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                  <!-- Producto 5: zapatos air force 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_971135-MLM83899772759_042025-O.webp" class="img-producto" alt="Zapatos">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary" data-es="Zapatos" data-en="Tactical Jacket">Air Force 1 Nocta Drake</span>
+                                <span class="fw-bold text-danger fs-5">$80.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Air Force 1 Nocta Drake</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Zapatos Air Force 1 en colaboracion con el rapero Drake" data-en="Windbreaker jacket with waterproof fabric and magnetic detachable pockets.">Chaqueta cortavientos con tela impermeable y bolsillos desmontables con imán.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Chaqueta agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+  <!-- Producto 5: zapatos air force 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-producto h-100 border-secondary bg-body-tertiary">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7DWh_2nK-3SDnu7_hAxw-4NNbZx0DdoLwsdBWPW3i2TEQH5qY0lhxO14&s=10" class="img-producto" alt="Zapatos">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary" data-es="Zapatos" data-en="Tactical Jacket">Niek Cortez Negros</span>
+                                <span class="fw-bold text-danger fs-5">$80.00</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Nike Cortez Negras</h5>
+                            <p class="card-text text-secondary small flex-grow-1" data-es="Zapatos Nike Cortez negros con detalles blancos" data-en="Windbreaker jacket with waterproof fabric and magnetic detachable pockets.">Chaqueta cortavientos con tela impermeable y bolsillos desmontables con imán.</p>
+                            <button class="btn btn-outline-danger w-100 fw-bold mt-2" onclick="alert('¡Chaqueta agregada al carrito!')" data-es="Añadir al Carrito" data-en="Add to Cart">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal -->
     <script src="script.js"></script>
 </body>
 </html>

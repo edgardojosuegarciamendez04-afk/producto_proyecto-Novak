@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NØVAK - Contáctanos</title>
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            var l = localStorage.getItem('lang') || 'es';
+            document.documentElement.setAttribute('data-bs-theme', t);
+            document.documentElement.setAttribute('lang', l);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="p-3 border-bottom border-danger">
-        <div class="container d-flex justify-content-between align-items-center">
+    <header class="p-3 border-bottom border-danger sticky-top bg-body">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
-            <nav>
-                <a href="index.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Inicio" data-en="Home">Inicio</a>
-                <a href="javascript.html" class="btn btn-sm btn-outline-secondary me-1">JavaScript</a>
-                <a href="jquery.html" class="btn btn-sm btn-outline-secondary me-1">jQuery</a>
-                <a href="json.html" class="btn btn-sm btn-outline-secondary me-1">JSON</a>
-                <a href="hosting.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
-                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary me-1" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <nav class="d-flex flex-wrap gap-1">
+                <a href="index.html" class="btn btn-sm btn-outline-secondary" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="javascript.html" class="btn btn-sm btn-outline-secondary">JavaScript</a>
+                <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
+                <a href="json.html" class="btn btn-sm btn-outline-secondary">JSON</a>
+                <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-danger" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
-            <div class="d-flex gap-2">
-                <button id="btn-lang" class="btn btn-outline-danger btn-sm">English</button>
-                <button id="btn-theme" class="btn btn-outline-light btn-sm">Modo Claro</button>
+            <div class="d-flex gap-2 align-items-center">
+                <button id="btn-lang" class="btn btn-outline-danger btn-toggle-ui"><span id="lang-text">English</span></button>
+                <button id="btn-theme" class="btn btn-outline-light btn-toggle-ui"><span id="theme-icon"></span><span id="theme-text">Modo Claro</span></button>
             </div>
         </div>
     </header>
@@ -34,10 +42,9 @@
             <h2 class="text-center mb-4 text-danger fw-bold" data-es="CONTÁCTANOS" data-en="CONTACT US">CONTÁCTANOS</h2>
             
             <div class="row g-4 align-items-center">
-                <!-- Columna Izquierda: Formulario -->
+                <!-- Formulario -->
                 <div class="col-md-7">
                     
-                    <!-- Alerta de mensaje enviado -->
                     <div id="alerta-contacto" class="alert alert-success text-center fw-bold d-none" role="alert" data-es="Este mensaje ha sido enviado" data-en="This message has been sent">
                         Este mensaje ha sido enviado
                     </div>
@@ -62,8 +69,9 @@
                     </form>
                 </div>
 
-                <!-- Columna Derecha: Información -->
+                <!-- Información e Imagen -->
                 <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop" class="img-fluid rounded mb-3 border border-secondary shadow" alt="Atención al Cliente">
                     <div class="p-3 border rounded border-secondary bg-body-tertiary">
                         <h4 class="text-danger fw-bold mb-3" data-es="INFORMACIÓN NØVAK" data-en="NØVAK INFORMATION">INFORMACIÓN NØVAK</h4>
                         <p class="mb-2"><strong data-es="Atención a Clientes:" data-en="Customer Support:">Atención a Clientes:</strong> <span data-es="Soporte directo para pedidos y consultas generales." data-en="Direct support for orders and general queries.">Soporte directo para pedidos y consultas generales.</span></p>

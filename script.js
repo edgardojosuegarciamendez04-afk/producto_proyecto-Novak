@@ -75,18 +75,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // -------------------------------------------------------------
-    // 3. FORMULARIO DE CONTACTO (Alerta temporal de 3 segundos)
+    // 3. ENVÍO A DISCORD Y ALERTA TEMPORAL
     // -------------------------------------------------------------
     const formContacto = document.getElementById('form-contacto');
     const alertaMensaje = document.getElementById('alerta-contacto');
 
+    // PEGA AQUÍ LA URL DE TU WEBHOOK DE DISCORD:
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/TU_WEBHOOK_AQUI"; 
+
     if (formContacto) {
         formContacto.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Formato del mensaje para Discord
+            const payload = {
+                embeds: [{
+                    title: "📩 Nuevo Mensaje de Contacto - NØVAK",
+                    color: 16726832, // Color rojo neón (#FF3B30)
+                    fields: [
+                        { name: "👤 Nombre", value: nombre, inline: true },
+                        { name: "📧 Email", value: email, inline: true },
+                        { name: "💬 Mensaje", value: mensaje }
+                    ],
+                    footer: { text: "NØVAK Web Contact Form" },
+                    timestamp: new Date()
+                }]
+            };
+
+            // Petición asíncrona hacia el Webhook de Discord
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.log('Simulación/Envío Discord:', err));
+
+            // Mostrar la alerta en pantalla
             if (alertaMensaje) {
                 alertaMensaje.classList.remove('d-none');
             }
+
+            // Limpiar formulario
             formContacto.reset();
+
+            // Ocultar alerta después de 3 segundos
             setTimeout(function() {
                 if (alertaMensaje) {
                     alertaMensaje.classList.add('d-none');

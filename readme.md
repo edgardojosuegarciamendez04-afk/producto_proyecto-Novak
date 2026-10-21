@@ -3,7 +3,7 @@
 **Estudiante:** Edgardo Josué García Méndez
 **Fecha:** 20 de Octubre de 2026
 **Enlace al Sitio Web (Vercel):** productoproyecto-novak.vercel.app
-**Repositorio GitHub:** 
+**Repositorio GitHub:** https://github.com/edgardojosuegarciamendez04-afk/producto_proyecto-Novak/tree/master
 
 ---
 

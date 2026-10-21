@@ -30,6 +30,13 @@ Acento| "#ff3b30"| Detalles y elementos interactivos
 
 La combinación de estos colores busca ofrecer una apariencia moderna relacionada con el mundo de la moda, La página utiliza las tipografías Segoe UI y fuentes del sistema.
 
+Demostración del Carrusel (Bootstrap):
+
+El carrusel de la página principal presenta imágenes de alta resolución enfocadas en tendencias urbanas: ropa *oversized*, zapatillas exclusivas y estilos *baggy*.
+
+### Evidencia del carrusel
+
+![Carrusel de productos NOVAK](assets/carusel.jpeg)
 ---
 
 ## 2. Investigación Técnica
@@ -98,7 +105,7 @@ Funcionamiento técnico:
 🟢 Anexo 1: Integración con Discord (Formulario y Recepción)
 
 ### Formulario
-![Formulario](assets/formulario.jpeg)
+![Formulario](assets/logo1.jpeg)
 
 ### Discord
 

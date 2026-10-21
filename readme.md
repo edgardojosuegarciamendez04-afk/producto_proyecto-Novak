@@ -43,24 +43,18 @@ El carrusel de la página principal presenta imágenes de alta resolución enfoc
 
 Resumen informativo de los temas investigados en el proyecto:
 
-### 1. JavaScript (Vanilla)
+1. JavaScript (Vanilla)
 
 JavaScript es el lenguaje de programación encargado de añadir dinámica e interactividad al sitio web de NOVAK, JavaScript permite gestionar los eventos de usuario, manipular el DOM y controlar la lógica de la tienda.
 
 Entre sus aplicaciones principales en el proyecto destacan:
-- **`localStorage`:** Guarda las preferencias de tema e idioma para mantenerlas activas al navegar entre las 8 páginas.
-- **Peticiones Asíncronas (`fetch`):** Envía los datos del formulario de contacto directamente al Webhook de Discord sin recargar la página.
+- localStorage: Guarda las preferencias de tema e idioma para mantenerlas activas al navegar entre las 8 páginas.
+- **Peticiones Asíncronas (fetch): Envía los datos del formulario de contacto directamente al Webhook de Discord sin recargar la página.
 - **Cuestionario Interactivo:** Evalúa las respuestas del usuario en tiempo real mediante funciones y estructuras condicionales.
 
 Ejemplo implementado en NOVAK:
 
-```javascript
-function cambiarTema(nuevoTema) {
-  localStorage.setItem('theme', nuevoTema);
-  document.documentElement.setAttribute('data-bs-theme', nuevoTema);
-}
-
-### 2. jQuery 
+2. jQuery 
 jQuery es una biblioteca de JavaScript diseñada para simplificar la selección de elementos del DOM, el manejo de eventos y la creación de animaciones mediante una sintaxis abreviada.
 
 Ejemplo:

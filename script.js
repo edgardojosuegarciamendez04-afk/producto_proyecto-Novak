@@ -75,13 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // -------------------------------------------------------------
-    // 3. ENVÍO DEL FORMULARIO A DISCORD VÍA WEBHOOK
+    // 3. ENVÍO DOBLE: DISCORD WEBHOOK + EMAILJS (GMAIL)
     // -------------------------------------------------------------
     const formContacto = document.getElementById('form-contacto');
     const alertaMensaje = document.getElementById('alerta-contacto');
 
-    // PEGA AQUÍ LA URL DE TU WEBHOOK DE DISCORD:
-    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1562298446017335418/ofD2PRLFJ9LPXR6INpn8WTDirarlvwu21KawlRWiwMTZ7xalHI9LQ6EkDFyx6_wDIulX";
+    // CREDENCIALES (Reemplaza con tus datos reales)
+    const DISCORD_WEBHOOK_URL = "TU_WEBHOOK_DE_DISCORD_AQUI";
+    const EMAILJS_SERVICE_ID = "TU_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID";
 
     if (formContacto) {
         formContacto.addEventListener('submit', function(e) {
@@ -91,11 +93,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const mensaje = document.getElementById('mensaje').value;
 
-            // Formatear la tarjeta (Embed) en color rojo neón (#FF3B30)
-            const payload = {
+            // --- A) ENVÍO A GMAIL VÍA EMAILJS ---
+            const emailParams = {
+                from_name: nombre,
+                from_email: email,
+                message: mensaje
+            };
+
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailParams)
+                    .then(function(res) {
+                        console.log('Mensaje enviado a Gmail exitosamente:', res.status);
+                    })
+                    .catch(function(err) {
+                        console.error('Error al enviar a Gmail:', err);
+                    });
+            }
+
+            // --- B) ENVÍO A DISCORD VÍA WEBHOOK ---
+            const discordPayload = {
                 embeds: [{
                     title: "📩 Nuevo Mensaje de Contacto - NØVAK",
-                    color: 16726832, 
+                    color: 16726832, // Rojo neón (#FF3B30)
                     fields: [
                         { name: "👤 Nombre", value: nombre, inline: true },
                         { name: "📧 Email", value: email, inline: true },
@@ -106,28 +125,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 }]
             };
 
-            // Enviar los datos a Discord mediante fetch (petición POST asíncrona)
             fetch(DISCORD_WEBHOOK_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(discordPayload)
             })
-            .then(response => {
-                console.log('Mensaje enviado a Discord correctamente');
-            })
-            .catch(error => {
-                console.error('Error al enviar el mensaje a Discord:', error);
-            });
+            .then(res => console.log('Mensaje enviado a Discord exitosamente'))
+            .catch(err => console.error('Error al enviar a Discord:', err));
 
-            // Mostrar la alerta en pantalla
+            // --- C) CONFIRMACIÓN EN PANTALLA Y LIMPIEZA ---
             if (alertaMensaje) {
                 alertaMensaje.classList.remove('d-none');
             }
 
-            // Limpiar los campos del formulario
             formContacto.reset();
 
-            // Ocultar la alerta tras 3 segundos
             setTimeout(function() {
                 if (alertaMensaje) {
                     alertaMensaje.classList.add('d-none');

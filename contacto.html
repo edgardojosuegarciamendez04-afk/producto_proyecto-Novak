@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØVAK - Contáctanos</title>
+    <title>NØVAK - Contacto</title>
+    
+    <!-- Script de precarga para evitar parpadeos de tema/idioma -->
     <script>
         (function() {
             var t = localStorage.getItem('theme') || 'dark';
@@ -12,11 +14,47 @@
             document.documentElement.setAttribute('lang', l);
         })();
     </script>
+    
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- SDK Oficial de EmailJS para envío a Gmail -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          // Reemplaza "TU_PUBLIC_KEY" con tu clave pública real de EmailJS
+          emailjs.init("TU_PUBLIC_KEY");
+       })();
+    </script>
+
+    <!-- Estilos personalizados -->
+    <style>
+        :root {
+            --brand-red: #ff3b30;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .brand-logo {
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .brand-logo span {
+            color: var(--brand-red);
+        }
+        .btn-toggle-ui {
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Encabezado de Navegación -->
     <header class="p-3 border-bottom border-danger sticky-top bg-body">
         <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
             <h1 class="h3 m-0 brand-logo">NØV<span>AK</span></h1>
@@ -26,7 +64,7 @@
                 <a href="jquery.html" class="btn btn-sm btn-outline-secondary">jQuery</a>
                 <a href="json.html" class="btn btn-sm btn-outline-secondary">JSON</a>
                 <a href="hosting.html" class="btn btn-sm btn-outline-secondary" data-es="Hosting" data-en="Hosting">Hosting</a>
-                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+                <a href="herramientas.html" class="btn btn-sm btn-outline-secondary" data-es="Herramientas Google" data-en="Google Tools">Google Tools</a>
                 <a href="cuestionario.html" class="btn btn-sm btn-outline-secondary" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
                 <a href="contacto.html" class="btn btn-sm btn-danger" data-es="Contacto" data-en="Contact">Contacto</a>
             </nav>
@@ -37,55 +75,46 @@
         </div>
     </header>
 
-    <main class="container my-5">
-        <div class="card p-4">
-            <h2 class="text-center mb-4 text-danger fw-bold" data-es="CONTÁCTANOS" data-en="CONTACT US">CONTÁCTANOS</h2>
-            
-            <div class="row g-4 align-items-center">
-                <!-- Formulario -->
-                <div class="col-md-7">
-                    
-                    <div id="alerta-contacto" class="alert alert-success text-center fw-bold d-none" role="alert" data-es="Este mensaje ha sido enviado" data-en="This message has been sent">
-                        Este mensaje ha sido enviado
-                    </div>
+    <!-- Contenido Principal: Sección Contacto -->
+    <main class="container my-5" style="max-width: 600px;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-danger" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+            <p class="text-secondary" data-es="Envíanos tus dudas, sugerencias o consultas sobre la marca." data-en="Send us your questions, suggestions, or brand inquiries.">Envíanos tus dudas, sugerencias o consultas sobre la marca.</p>
+        </div>
 
-                    <form id="form-contacto">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label fw-bold" data-es="NOMBRE" data-en="NAME">NOMBRE</label>
-                            <input type="text" class="form-control" id="nombre" data-es-placeholder="Ingresa tu nombre completo" data-en-placeholder="Enter your full name" placeholder="Ingresa tu nombre completo" required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-bold" data-es="EMAIL" data-en="EMAIL">EMAIL</label>
-                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label fw-bold" data-es="MENSAJE" data-en="MESSAGE">MENSAJE</label>
-                            <textarea class="form-control" id="mensaje" rows="4" data-es-placeholder="Escribe tu consulta o mensaje aquí..." data-en-placeholder="Write your query or message here..." placeholder="Escribe tu consulta o mensaje aquí..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-danger w-100 fw-bold" data-es="ENVIAR" data-en="SEND">ENVIAR</button>
-                    </form>
+        <div class="card bg-body-tertiary border-secondary shadow-lg p-4 rounded-4">
+            <!-- Formulario de Contacto -->
+            <form id="form-contacto">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label fw-bold" data-es="Nombre" data-en="Name">Nombre</label>
+                    <input type="text" class="form-control bg-body border-secondary" id="nombre" required 
+                           data-es-placeholder="Tu nombre completo" data-en-placeholder="Your full name" placeholder="Tu nombre completo">
                 </div>
-
-                <!-- Información e Imagen -->
-                <div class="col-md-5">
-                    <div class="p-3 border rounded border-secondary bg-body-tertiary">
-                        <h4 class="text-danger fw-bold mb-3" data-es="INFORMACIÓN NØVAK" data-en="NØVAK INFORMATION">INFORMACIÓN NØVAK</h4>
-                        <p class="mb-2"><strong data-es="Atención a Clientes:" data-en="Customer Support:">Atención a Clientes:</strong> <span data-es="Soporte directo para pedidos y consultas generales." data-en="Direct support for orders and general queries.">Soporte directo para pedidos y consultas generales.</span></p>
-                        <hr>
-                        <p class="mb-2"><strong data-es="Horario de Atención:" data-en="Business Hours:">Horario de Atención:</strong> <span data-es="Lunes a Viernes de 8:00 AM a 5:00 PM." data-en="Monday to Friday from 8:00 AM to 5:00 PM.">Lunes a Viernes de 8:00 AM a 5:00 PM.</span></p>
-                        <hr>
-                        <p class="mb-0"><strong data-es="Ubicación:" data-en="Location:">Ubicación:</strong> San Salvador, El Salvador.</p>
-                    </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold" data-es="Correo Electrónico" data-en="Email Address">Correo Electrónico</label>
+                    <input type="email" class="form-control bg-body border-secondary" id="email" required 
+                           data-es-placeholder="tucorreo@ejemplo.com" data-en-placeholder="yourname@example.com" placeholder="tucorreo@ejemplo.com">
                 </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label fw-bold" data-es="Mensaje" data-en="Message">Mensaje</label>
+                    <textarea class="form-control bg-body border-secondary" id="mensaje" rows="4" required 
+                              data-es-placeholder="Escribe tu mensaje aquí..." data-en-placeholder="Write your message here..." placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger w-100 fw-bold py-2" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</button>
+            </form>
+
+            <!-- Alerta de éxito oculta por defecto -->
+            <div id="alerta-contacto" class="alert alert-success mt-3 d-none text-center fw-bold" role="alert" 
+                 data-es="¡Mensaje enviado con éxito a Discord y Gmail!" data-en="Message successfully sent to Discord and Gmail!">
+                ¡Mensaje enviado con éxito a Discord y Gmail!
             </div>
         </div>
     </main>
 
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal con la lógica unificada -->
     <script src="script.js"></script>
 </body>
 </html>
-AA

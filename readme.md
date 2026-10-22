@@ -99,7 +99,7 @@ Funcionamiento técnico:
 🟢 Anexo 1: Integración con Discord (Formulario y Recepción)
 
 ### Formulario
-![Formulario](assets/logo1.jpeg)
+![Formulario](assets/contactos.jpeg)
 
 ### Discord
 

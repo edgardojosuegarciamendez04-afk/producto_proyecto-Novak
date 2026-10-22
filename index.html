@@ -35,7 +35,7 @@
     <!-- Bootstrap 5 CSS -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
       <!-- Estilos directos integrados para garantizar el catálogo -->
 
@@ -179,36 +179,54 @@
 
             <div class="col-lg-6">
 
-                <div id="homeCarousel" class="carousel slide home-carousel rounded border border-secondary shadow-lg" data-bs-ride="carousel" data-bs-interval="5000" aria-label="Colección destacada NØVAK">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFk1u11gLHPisO-o7xdN1J2XgAVCnTjg3uOtedajFZPN2ZEMnywqKkAmM&s=10" alt="Prendas urbanas oversized NØVAK">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuXHD6IyB0EAAxS3EreTfFkacWusFUPNi0W3130NRwEvIsRiDoC8bJLVyI&s=10" alt="Pantalón baggy azul de la colección NØVAK">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.etsystatic.com/64606550/r/il/45e975/8329297355/il_fullxfull.8329297355_lw52.jpg" alt="Denim negro estampado de la colección NØVAK">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev" aria-label="Diapositiva anterior">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next" aria-label="Diapositiva siguiente">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
-                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP-7csVnGP85TNfvWXfamuNRe1H7GfASu0gPA5DSpdnFGIGs3sTckniDc&s=10" class="img-fluid rounded border border-secondary shadow-lg" alt="NØVAK Streetwear">
 
             </div>
 
         </div>
 
 
+        <section class="home-carousel mb-5" aria-label="Colección destacada">
+            <div id="carruselInicio" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+                    <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+                    <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFk1u11gLHPisO-o7xdN1J2XgAVCnTjg3uOtedajFZPN2ZEMnywqKkAmM&s=10" class="d-block w-100" alt="Pantalón negro con bordados">
+                        <div class="home-carousel-caption">
+                            <span class="text-uppercase text-danger fw-bold small" data-es="Nueva colección" data-en="New collection">Nueva colección</span>
+                            <h2 class="display-6 fw-bold" data-es="Detalles que destacan" data-en="Details that stand out">Detalles que destacan</h2>
+                            <a href="#cat-productos" class="btn btn-danger fw-bold" data-es="Explorar colección" data-en="Explore collection">Explorar colección</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.etsystatic.com/64606550/r/il/45e975/8329297355/il_fullxfull.8329297355_lw52.jpg" class="d-block w-100" alt="Jeans baggy de mezclilla">
+                        <div class="home-carousel-caption">
+                            <span class="text-uppercase text-danger fw-bold small" data-es="Corte amplio" data-en="Relaxed fit">Corte amplio</span>
+                            <h2 class="display-6 fw-bold" data-es="Hecho para moverse" data-en="Made to move">Hecho para moverse</h2>
+                            <a href="#cat-productos" class="btn btn-danger fw-bold" data-es="Ver pantalones" data-en="Shop pants">Ver pantalones</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_971135-MLM83899772759_042025-O.webp" class="d-block w-100" alt="Tenis blancos de colección">
+                        <div class="home-carousel-caption">
+                            <span class="text-uppercase text-danger fw-bold small" data-es="Completa el look" data-en="Complete the look">Completa el look</span>
+                            <h2 class="display-6 fw-bold" data-es="Calzado con carácter" data-en="Footwear with character">Calzado con carácter</h2>
+                            <a href="#cat-productos" class="btn btn-danger fw-bold" data-es="Descubrir calzado" data-en="Discover footwear">Descubrir calzado</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselInicio" data-bs-slide="prev" aria-label="Anterior">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselInicio" data-bs-slide="next" aria-label="Siguiente">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </section>
 
         <!-- SECCIÓN CATÁLOGO DE PRODUCTOS -->
 
